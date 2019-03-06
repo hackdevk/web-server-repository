@@ -1,0 +1,22 @@
+<!--This template is for the about page-->
+<!-- for viewing the changes enter url 'localhost:3000/about' -->
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Some Website </title>
+    </head>
+    <body>
+        <!--the data under the braces is dynamic data which is getting embedded-->
+        {{!-- <h1>{{pageTitle}}</h1> --}}
+        {{> header}}
+        
+        <p>Some text here</p>
+
+        {{!-- <footer>
+            <p>Copyright {{currentYear}}</p>
+        </footer> 
+        we are injecting template istead of data so the synatx is:  the 'footer' is the partial name--}}
+        {{> footer}}
+    </body>
+</html>
