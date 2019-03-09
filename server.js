@@ -97,6 +97,12 @@ app.get('/about', (req, res) => { //rendering this template('about.hbs') with th
     });
 });
 
+app.get('/projects', (req, res) => {
+    res.render('projects.hbs', {
+        pageTitle: 'Projects title',
+    });
+});
+
 //adding another page called as 'bad'
 //it sends JSON data back 
 app.get('/bad',(req, res) => {
