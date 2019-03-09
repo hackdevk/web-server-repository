@@ -2,6 +2,10 @@ const express = require('express');
 const hbs = require('hbs');
 const fs = require('fs');
 
+//'process.env'  is an object that stores all our environment variables as key value pairs
+// We are looking for the one in which 'heroku called as port' 
+const port = process.env.PORT || 3000;  //if the 'process.env.PORT' does not exist then heroku will set the port to 3000
+
 var app = express();   //calling the express function
 
 // a partial is a partial piece of our website. Its something which we can reuse throughout our templates
@@ -107,7 +111,13 @@ app.get('/bad',(req, res) => {
 //this listen() binds the application to a port on our machine
 // app.listen(3000);
 
+//now it's using a static value i.e 3000 so we want to change it to dynamic value 
 //using listen() with the second argument 
-app.listen(3000, () => {
-    console.log('Server is up on port 3000.!!'); //but this message is more like a confirmational message and it will only show in CMD
+// app.listen(3000, () => {
+//     console.log('Server is up on port 3000.!!'); //but this message is more like a confirmational message and it will only show in CMD
+// });
+
+//using the constant we created for port
+app.listen(port, () => {
+    console.log(`Server is up on port ${port}.!!!`);
 });
